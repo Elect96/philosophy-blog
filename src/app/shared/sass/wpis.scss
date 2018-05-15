@@ -1,0 +1,63 @@
+@import "compass";
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/mixins";
+@import "partials/base";
+@import "compass/css3";
+
+@media (max-width: 1000px) {
+	div {
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+}
+.container {
+	@extend .socialdivs;
+}
+.west {
+	float: left;
+	width: 750px;
+	padding: 20px;
+	text-align: justify;
+
+	@media (max-width: 1000px) {
+		width: 100%;
+	}
+	& h1 {
+		font-size: 30px;
+		font-weight: 400;
+		color: $light-blue;
+		margin-bottom: 20px;
+
+		@media (max-width: 640px) {
+			font-size: 24px;
+			text-align: left;
+		}
+	}
+	& article > img {
+		@media (max-width: 1000px) {
+			width: 100%;
+		}
+	}
+}
+.east {
+	float: left;
+	width: 170px;
+	padding: 20px;
+
+	@media (max-width: 1000px) {
+		width: 100%;
+	}
+	& ul {
+		list-style-type: disc;
+		padding-left: 20px;
+
+		& > li {
+			margin-bottom: 5px;
+		}
+	}
+	& img {
+		margin-top: 15px;
+	}
+}

@@ -1,0 +1,25 @@
+// Some people like naming based on where the color
+// will be used while others prefer names that
+// represent the color
+
+$white: #efefef;
+$dark-blue: #0a2b42;
+$light-blue: #39a5f1;
+$bg-grey: #2f3336;
+$bg-grey2: #191d21;
+$logo-color: #ddd;
+$bg-nav: #1c74b2;
+$bg-entry: #222930;
+$bg-bluebutton: #1c74b2;
+$bg-bluebutton-hover: #196499;
+$bg-fb: #4668b3;
+$bg-yt: #d94348;
+$bg-tw: #3095d3;
+$bg-gplus: #d95333;
+
+// Fonts
+$logo-font-size: 46px; 
+
+// You can define a default that is used only if a value isn't
+// assigned any place else
+$default-text-color: $white !default;
