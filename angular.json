@@ -40,7 +40,11 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },
-            "scripts": []
+            "scripts": [
+              "./src/app/shared/bootstrap/js/jquery-slim.min.js",
+              "./src/app/shared/bootstrap/js/popper.min.js",
+              "./src/app/shared/bootstrap/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,7 +93,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./src/app/shared/bootstrap/js/jquery-slim.min.js",
+              "./src/app/shared/bootstrap/js/popper.min.js",
+              "./src/app/shared/bootstrap/js/bootstrap.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
