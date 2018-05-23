@@ -1,0 +1,40 @@
+@import "../../shared/scss/partials/_variables.scss";
+
+.socials {
+	text-align: center;
+	background-color: $bg-newest;
+}
+.fb {
+	width: 25%;
+	height: 155px;
+	line-height: 155px;
+	float: left;
+	font-size: $socials-font-size;
+	-webkit-transition: background-color .5s;
+    transition: background-color .5s;
+
+	&:hover {
+		background-color: $bg-fb;
+	}
+}
+.yt {
+	@extend .fb;
+
+	&:hover {
+		background-color: $bg-yt;
+	}
+}
+.tw {
+	@extend .fb;
+
+	&:hover {
+		background-color: $bg-tw;
+	}
+}
+.gplus {
+	@extend .fb;
+
+	&:hover {
+		background-color: $bg-gplus;
+	}
+}

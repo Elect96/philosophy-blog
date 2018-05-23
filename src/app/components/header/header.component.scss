@@ -1,0 +1,36 @@
+@import "../../shared/scss/partials/_variables.scss";
+.logo {
+	font-size: $logo-font-size;
+	font-weight: 700;
+	color: $logo-color;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+.navbar {
+	background-color: $bg-navbar;
+}
+.menu {
+	font-size: $menu-font-size;
+
+	& > li {
+		padding-left: 20px;
+		padding-right: 20px;
+		border-right: 1px dashed $dark-blue;
+
+		&:first-child {
+			border-left: 1px dashed $dark-blue;
+		}
+	}
+	& a {
+		color: $default-text-color;
+		text-decoration: none;
+		-webkit-transition: color .5s;
+	    transition: color .5s;
+
+		&:hover {
+			color: $dark-blue;
+		}
+	}
+}
