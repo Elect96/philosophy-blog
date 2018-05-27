@@ -1,26 +1,39 @@
 @import "../../shared/scss/partials/_variables.scss";
+@import "../../shared/bootstrap/scss/_functions.scss";
+@import "../../shared/bootstrap/scss/_variables.scss";
+@import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
 .logo {
-	font-size: $logo-font-size;
-	font-weight: 700;
-	color: $logo-color;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	margin-top: 50px;
-	margin-bottom: 40px;
+	width: 100%;
+
+	& h1 {
+		font-size: $logo-font-size;
+		font-weight: 700;
+		color: $logo-color;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-top: 50px;
+		margin-bottom: 40px;
+
+		@include media-breakpoint-up(sl) {
+			font-size: $logo-md-font-size;
+		}
+	}
 }
 .navbar {
 	background-color: $bg-navbar;
 }
 .menu {
+	width: 100%;
 	font-size: $menu-font-size;
 
 	& > li {
 		padding-left: 20px;
 		padding-right: 20px;
-		border-right: 1px dashed $dark-blue;
+		text-align: center;
+		border-bottom: 1px dashed $dark-blue;
 
 		&:first-child {
-			border-left: 1px dashed $dark-blue;
+			border-top: 1px dashed $dark-blue;
 		}
 	}
 	& a {
@@ -31,6 +44,23 @@
 
 		&:hover {
 			color: $dark-blue;
+		}
+	}
+	@include media-breakpoint-up(sl) {
+		width: 100%;
+		position: relative;
+		padding-right: 15px;
+		padding-left: 15px;
+		flex-direction: row;
+
+		& > li {
+			border-right: 1px dashed $dark-blue;
+			border-bottom: none;
+
+			&:first-child {
+				border-left: 1px dashed $dark-blue;
+				border-top: none;
+			}
 		}
 	}
 }

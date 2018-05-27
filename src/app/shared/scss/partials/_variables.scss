@@ -19,7 +19,8 @@ $bg-gplus: #d95333;
 $logo-color: #ddd;
 
 // Fonts
-$logo-font-size: 46px;
+$logo-md-font-size: 46px;
+$logo-font-size: 24px;
 $menu-font-size: 18px;
 $entry-txt-size: 15px;
 $socials-font-size: 72px;
@@ -28,4 +29,6 @@ $socials-font-size: 72px;
 $default-bg-color: $grey !default;
 $default-text-color: $white !default;
 $default-font-family: 'Open Sans', sans-serif !default;
-$default-font-size: 17px !default;
+$default-md-font-size: 17px !default;
+$default-font-size: 15px !default;
+
