@@ -1,5 +1,17 @@
 @import "../../shared/scss/partials/_variables.scss";
+@import "../../shared/bootstrap/scss/_functions.scss";
+@import "../../shared/bootstrap/scss/_variables.scss";
+@import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
 
+.container-fluid {
+	padding-right: 0;
+	padding-left: 0;
+
+	@include media-breakpoint-up(sl) {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
 .socials {
 	text-align: center;
 	background-color: $bg-newest;
@@ -15,6 +27,9 @@
 
 	&:hover {
 		background-color: $bg-fb;
+	}
+	@include media-breakpoint-up(sl) {
+		font-size: $socials-sl-font-size;
 	}
 }
 .yt {

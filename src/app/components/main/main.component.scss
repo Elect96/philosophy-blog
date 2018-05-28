@@ -1,12 +1,14 @@
 @import "../../shared/scss/partials/_variables.scss";
+@import "../../shared/bootstrap/scss/_functions.scss";
+@import "../../shared/bootstrap/scss/_variables.scss";
+@import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
 
 .categories {
 	text-align: center;
 }
 .author {
 	display: inline-block;
-	margin-top: 10px;
-	margin-left: 15px;
+	margin-top: 10px;	
 
 	& a {
 		-webkit-transition: opacity .5s;
@@ -15,6 +17,10 @@
 		&:hover {
 			opacity: .5;
 		}
+	}
+
+	@include media-breakpoint-up(md) {
+		margin-left: 15px;
 	}
 }
 figcaption {
@@ -53,10 +59,17 @@ figcaption {
 	& button {
 		background-color: $bg-bluebutton;
 		border-color: $bg-bluebutton;
+		color: $white;
 		padding: 15px;
 		border-radius: 5px;
 		-webkit-transition: background-color .5s;
-    	transition: background-color .5s;
+		transition: background-color .5s;
+		font-size: 0.875rem;
+		
+		@include media-breakpoint-up(sl) {
+			font-size: 1.25rem;
+    		line-height: 1.5;
+		}
 
 		&:hover {
 			background-color: $bg-bluebutton-hover;

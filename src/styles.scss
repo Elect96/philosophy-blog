@@ -11,14 +11,22 @@ body {
 	font-size: $default-font-size;
 }
 h1 {
-	font-size: 44px;
+	font-size: $h1-font-size;
 	font-weight: 400;
 	color: $light-blue;
 	margin-bottom: 20px;
+
+	@include media-breakpoint-up(sl) {
+		font-size: $h1-sl-font-size;
+	}
 }
 h2 {
-	font-size: 20px;
+	font-size: $h2-sl-font-size;
 	font-weight: 400;
 	color: $light-blue;
 	margin: 1em 0 1em 0;
+	
+	@include media-breakpoint-up(sl) {
+		font-size: $h2-sl-font-size;
+	}
 }
