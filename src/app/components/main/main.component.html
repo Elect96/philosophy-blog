@@ -14,42 +14,42 @@
     
                         <div class="author">
                             <figure>
-                                <a href="#"><img [src]="imageFile('alan-watts')" alt="Alan Watts"></a>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('alan-watts')" alt="Alan Watts"></a>
                                 <figcaption>Alan Watts</figcaption>
                             </figure>
                         </div>
     
                         <div class="author">
                             <figure>
-                                <a href="#"><img [src]="imageFile('de-mello')" alt="Anthony de Mello"></a>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
                                 <figcaption>Anthony de Mello</figcaption>
                             </figure>
                         </div>
     
                         <div class="author">
                             <figure>
-                                <a href="#"><img [src]="imageFile('nietzsche')" alt="Fryderyk Nietzsche"></a>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('nietzsche')" alt="Fryderyk Nietzsche"></a>
                                 <figcaption>Fryderyk Nietzsche</figcaption>
                             </figure>
                         </div>
     
                         <div class="author">
                             <figure>
-                                <a href="#"><img [src]="imageFile('platon')" alt="Platon"></a>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('platon')" alt="Platon"></a>
                                 <figcaption>Platon</figcaption>
                             </figure>
                         </div>
     
                         <div class="author">
                             <figure>
-                                <a href="#"><img [src]="imageFile('kant')" alt="Immanuel Kant"></a>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('kant')" alt="Immanuel Kant"></a>
                                 <figcaption>Immanuel Kant</figcaption>
                             </figure>
                         </div>
     
                         <div class="author">
                             <figure>
-                                <a href="#"><img [src]="imageFile('emerson')" alt="Ralph Waldo Emerson"></a>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('emerson')" alt="Ralph Waldo Emerson"></a>
                                 <figcaption>Ralph Waldo Emerson</figcaption>
                             </figure>
                         </div>
@@ -71,11 +71,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                        <a href="#"><img [src]="imageFile('de-mello')" alt="Anthony de Mello"></a>
+                                        <a routerLink="/article"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
                                     </div>
                 
                                     <div class="entry-txt col-md-10">
-                                        <h2>Anthony de Mello: Title</h2>
+                                        <h2><a routerLink="/article">Anthony de Mello: Title</a></h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie. Phasellus tincidunt tempus vulputate.</p>
                                     </div>
                                 </div>
@@ -86,10 +86,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                        <img [src]="imageFile('nietzsche')" alt="Fryderyk Nietzsche">
+                                        <img [src]="this.imageFileService.imageFile('nietzsche')" alt="Fryderyk Nietzsche">
                                     </div>
                                     <div class="entry-txt col-md-10">
-                                        <h2>Fryderyk Nietzsche: Title</h2>
+                                        <h2><a routerLink="/entry">Fryderyk Nietzsche: Title</a></h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie. Phasellus tincidunt tempus vulputate.</p>
                                     </div>
                                 </div>
@@ -100,11 +100,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                        <img [src]="imageFile('alan-watts')" alt="Alan Watts">
+                                        <img [src]="this.imageFileService.imageFile('alan-watts')" alt="Alan Watts">
                                     </div>
                 
                                     <div class="entry-txt col-md-10">
-                                        <h2>Alan Watts: Title</h2>
+                                        <h2><a routerLink="/entry">Alan Watts: Title</a></h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie. Phasellus tincidunt tempus vulputate.</p>
                                     </div>
                                 </div>

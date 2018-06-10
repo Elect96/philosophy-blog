@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ImageFileService } from '../../shared/services/image-file.service';
 
 @Component({
   selector: 'app-main',
@@ -6,12 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  imagePath: string;
+  
+  constructor(private imageFileService: ImageFileService) {  }
 
-  constructor() {  }
-
-  imageFile($name) {
-    return this.imagePath = "../../assets/images/" + $name + ".jpg";
-  }
+  // imageFile($name) {
+  //   return this.imagePath = "../../assets/images/" + $name + ".jpg";
+  // }
 
 }

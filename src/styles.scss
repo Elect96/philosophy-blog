@@ -26,6 +26,17 @@ h2 {
 	color: $light-blue;
 	margin: 1em 0 1em 0;
 	
+	& > a {
+		color: $light-blue;
+		text-decoration: none;
+		-webkit-transition: color .5s;
+		transition: color .5s;
+		
+		&:hover {
+			text-decoration: none;
+			color: lighten($light-blue, 20%);
+		}
+	}
 	@include media-breakpoint-up(sl) {
 		font-size: $h2-sl-font-size;
 	}

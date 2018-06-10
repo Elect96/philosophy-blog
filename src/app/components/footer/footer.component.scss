@@ -4,32 +4,29 @@
 @import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
 
 .container-fluid {
-	padding-right: 0;
 	padding-left: 0;
-
-	@include media-breakpoint-up(sl) {
-		padding-right: 15px;
-		padding-left: 15px;
-	}
+	padding-right: 0;
 }
 .socials {
 	text-align: center;
 	background-color: $bg-newest;
 }
 .fb {
-	width: 25%;
+	width: 100%;
 	height: 155px;
 	line-height: 155px;
-	float: left;
 	font-size: $socials-font-size;
 	-webkit-transition: background-color .5s;
     transition: background-color .5s;
 
 	&:hover {
 		background-color: $bg-fb;
+		cursor: pointer;
 	}
 	@include media-breakpoint-up(sl) {
 		font-size: $socials-sl-font-size;
+		width: 25%;
+		float: left;
 	}
 }
 .yt {
