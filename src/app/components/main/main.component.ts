@@ -1,17 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ImageFileService } from '../../shared/services/image-file.service';
+import { ArticleService } from '../../shared/services/article.service';
+import { Article } from '../../shared/data-model';
 
 @Component({
   selector: 'app-main',
   templateUrl: `./main.component.html`,
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
+  articles: Article[];
   
-  constructor(private imageFileService: ImageFileService) {  }
+  constructor(private imageFileService: ImageFileService,
+              private articleService: ArticleService) {  }
 
-  // imageFile($name) {
-  //   return this.imagePath = "../../assets/images/" + $name + ".jpg";
-  // }
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.articles = this.articleService.getNewArticles();
+  }
+
+  log($this) {
+    console.log($this);
+  }
 
 }

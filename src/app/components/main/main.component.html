@@ -67,45 +67,18 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie.</p>
                         </header>
         
-                        <div class="entry">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                        <a routerLink="/article"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
-                                    </div>
-                
-                                    <div class="entry-txt col-md-10">
-                                        <h2><a routerLink="/article">Anthony de Mello: Title</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie. Phasellus tincidunt tempus vulputate.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="entry">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                        <img [src]="this.imageFileService.imageFile('nietzsche')" alt="Fryderyk Nietzsche">
-                                    </div>
-                                    <div class="entry-txt col-md-10">
-                                        <h2><a routerLink="/entry">Fryderyk Nietzsche: Title</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie. Phasellus tincidunt tempus vulputate.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="entry">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                        <img [src]="this.imageFileService.imageFile('alan-watts')" alt="Alan Watts">
-                                    </div>
-                
-                                    <div class="entry-txt col-md-10">
-                                        <h2><a routerLink="/entry">Alan Watts: Title</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie. Phasellus tincidunt tempus vulputate.</p>
+                        <div *ngIf="articles">
+                            <div *ngFor="let article of articles" class="entry">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
+                                            <a [routerLink]="['/article', article.id]"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
+                                        </div>
+                    
+                                        <div class="entry-txt col-md-10">
+                                            <h2><a [routerLink]="['/article', article.id]">{{ article.author }}: {{ article.title }}</a></h2>
+                                            <p>{{ article.content | articleContentExcerpt}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
