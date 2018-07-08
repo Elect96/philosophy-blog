@@ -1,0 +1,89 @@
+
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-6">
+        <div class="entry col-md-8">
+            <main>
+                <article>
+                    <div *ngIf="article">
+                        <header>
+                            <h1>{{ article.author }}: {{ article.title }}</h1>
+                            <p>{{ article.date | date: 'dd/MM/yyyy, h:mm a' }}</p>
+                        </header>
+                        
+                        <div [innerHtml]="article.content"></div>
+                    </div>  
+
+
+                    <section>
+                        <header>
+                            <h1>Komentarze czytelników</h1>
+                            <p>Przemyślenia? Reakcje? Podziel się swoją interpretacją niniejszego tekstu filozoficznego! Zachęcam do dyskusji w komentarzach poniżej, jednocześnie prosząc o zachowanie netykiety oraz kultury wypowiedzi.</p>
+                        </header>
+    
+                        <article>
+                            <header>
+                                <img [src]="imageFileService.imageFile('user')" alt="user">
+                                <p>Użytkownik 1 | 10.03.2017 | 19:39:01</p>
+                            </header>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis tellus id turpis lobortis tempor. Curabitur vulputate viverra dui. Maecenas eu lorem sed turpis bibendum laoreet non sed dolor. Pellentesque vel tellus in lacus pharetra convallis. Curabitur ut ullamcorper felis, ut feugiat massa. Donec ut euismod arcu. Vestibulum rutrum suscipit nisi, vel euismod massa tincidunt nec. Morbi rutrum sapien at augue iaculis, feugiat egestas est convallis. </p>
+                        </article>
+                        
+                        <article>
+                            <header>
+                                <img [src]="imageFileService.imageFile('user')" alt="user">
+                                <p>Użytkownik 2 | 10.03.2017 | 19:40:00</p>
+                            </header>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis tellus id turpis lobortis tempor. Curabitur vulputate viverra dui. Maecenas eu lorem sed turpis bibendum laoreet non sed dolor. Pellentesque vel tellus in lacus pharetra convallis. Curabitur ut ullamcorper felis, ut feugiat massa. Donec ut euismod arcu. Vestibulum rutrum suscipit nisi, vel euismod massa tincidunt nec. Morbi rutrum sapien at augue iaculis, feugiat egestas est convallis. </p>
+                        </article>
+                    </section>
+                </article>
+            </main>
+        </div>
+    
+        <div class="side-nav col-md-3 offset-md-1">
+            <aside>
+                <h2>Kategorie</h2>
+                
+                <ul>
+                    <li>Alan Watts</li>
+                    <li>Anthony de Mello</li>
+                    <li>Fryderyk Nietzsche</li>
+                    <li>Platon</li>
+                    <li>Immanuel Kant</li>
+                    <li>Ralph Waldo Emerson</li>
+                </ul>
+                
+                <h2>Powiązane wpisy</h2>
+                
+                <ul>
+                    <li>Anthony de Mello: Poszukiwanie akceptacji</li>
+                    <li>Fryderyk Nietzsche: Zgładzić smoka</li>
+                    <li>Alan Watts: Potrzeba kontroli</li>
+                </ul>
+                
+                <h2>Archiwum bloga</h2>
+                
+                <ul>
+                    <li>Styczeń (8)</li>
+                    <li>Luty (6)</li>
+                    <li>Marzec (7)</li>
+                    <li>Kwiecień (9)</li>
+                    <li>Maj (9)</li>
+                    <li>Czerwiec (10)</li>
+                    <li>Lipiec (11)</li>
+                    <li>Sierpień (9)</li>
+                    <li>Wrzesień (8)</li>
+                    <li>Październik (9)</li>
+                    <li>Listopad (6)</li>
+                    <li>Grudzień (10)</li>
+                </ul>
+    
+                <img [src]="imageFileService.imageFile('add')" alt="advertisement">
+            </aside>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+@import "../shared/scss/partials/_variables.scss";
+@import "../shared/bootstrap/scss/_functions.scss";
+@import "../shared/bootstrap/scss/_variables.scss";
+@import "../shared/bootstrap/scss/mixins/_breakpoints.scss";
+
+.entry {
+    text-align: left;
+
+    & h1 {
+		font-size: 30px;
+		font-weight: 400;
+        color: $light-blue;
+		margin-bottom: 20px;
+		text-align: left;
+	}
+	@include media-breakpoint-up(sl) {
+		text-align: justify;
+	}
+}
+.side-nav {
+    & ul {
+		list-style-type: disc;
+		padding-left: 20px;
+
+		& > li {
+			margin-bottom: 5px;
+		}
+	}
+	& img {
+		margin-top: 15px;
+	}
+}

@@ -1,0 +1,68 @@
+
+<app-header></app-header>
+<main>
+    <div class="container">
+        <div class="row mt-6">
+            <div *ngIf="articles" class="entry col-md-8">
+                <h1>Articles</h1>
+                <article *ngFor="let article of articles">
+                    <div class="container">
+                        <div class="row">
+                            <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
+                                <a [routerLink]="['/article', article.id]"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
+                            </div>
+        
+                            <div class="entry-txt col-md-10">
+                                <h2><a [routerLink]="['/article', article.id]">{{ article.author }}: {{ article.title }}</a></h2>
+                                <p>{{ article.content | articleContentExcerpt}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+                
+            <div class="side-nav col-md-3 offset-md-1">
+                <aside>
+                    <h2>Kategorie</h2>
+                    
+                    <ul>
+                        <li>Alan Watts</li>
+                        <li>Anthony de Mello</li>
+                        <li>Fryderyk Nietzsche</li>
+                        <li>Platon</li>
+                        <li>Immanuel Kant</li>
+                        <li>Ralph Waldo Emerson</li>
+                    </ul>
+                    
+                    <h2>Powiązane wpisy</h2>
+                    
+                    <ul>
+                        <li>Anthony de Mello: Poszukiwanie akceptacji</li>
+                        <li>Fryderyk Nietzsche: Zgładzić smoka</li>
+                        <li>Alan Watts: Potrzeba kontroli</li>
+                    </ul>
+                    
+                    <h2>Archiwum bloga</h2>
+                    
+                    <ul>
+                        <li>Styczeń (8)</li>
+                        <li>Luty (6)</li>
+                        <li>Marzec (7)</li>
+                        <li>Kwiecień (9)</li>
+                        <li>Maj (9)</li>
+                        <li>Czerwiec (10)</li>
+                        <li>Lipiec (11)</li>
+                        <li>Sierpień (9)</li>
+                        <li>Wrzesień (8)</li>
+                        <li>Październik (9)</li>
+                        <li>Listopad (6)</li>
+                        <li>Grudzień (10)</li>
+                    </ul>
+                    
+                    <img [src]="this.imageFileService.imageFile('add')" alt="advertisement">
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>
