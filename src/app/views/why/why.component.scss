@@ -1,0 +1,12 @@
+@import "../../shared/scss/partials/_variables.scss";
+@import "../../shared/bootstrap/scss/_functions.scss";
+@import "../../shared/bootstrap/scss/_variables.scss";
+@import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
+
+p {
+    text-align: left;
+
+    @include media-breakpoint-up(md) {
+		text-align: justify;
+	}
+}

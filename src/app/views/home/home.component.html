@@ -1,4 +1,108 @@
 
 <app-header></app-header>
-<app-main></app-main>
+<main>
+    <article>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="categories col-md-10 offset-md-1 mt-6">
+                        <header>
+                            <h1>Welcome to the World of Philosophy!</h1>
+                            <p>Are you a fan of philosophy? Do you like the concept of ideal state? 
+                            Are you interested in how people perceive the world?
+                            If yes, feel free to dive into the minds of the greatest philosophers ever!</p>
+                        </header>
+    
+                        <div class="author">
+                            <figure>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('alan-watts')" alt="Alan Watts"></a>
+                                <figcaption>Alan Watts</figcaption>
+                            </figure>
+                        </div>
+    
+                        <div class="author">
+                            <figure>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
+                                <figcaption>Anthony de Mello</figcaption>
+                            </figure>
+                        </div>
+    
+                        <div class="author">
+                            <figure>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('nietzsche')" alt="Fryderyk Nietzsche"></a>
+                                <figcaption>Fryderyk Nietzsche</figcaption>
+                            </figure>
+                        </div>
+    
+                        <div class="author">
+                            <figure>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('platon')" alt="Platon"></a>
+                                <figcaption>Platon</figcaption>
+                            </figure>
+                        </div>
+    
+                        <div class="author">
+                            <figure>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('kant')" alt="Immanuel Kant"></a>
+                                <figcaption>Immanuel Kant</figcaption>
+                            </figure>
+                        </div>
+    
+                        <div class="author">
+                            <figure>
+                                <a href="#"><img [src]="this.imageFileService.imageFile('emerson')" alt="Ralph Waldo Emerson"></a>
+                                <figcaption>Ralph Waldo Emerson</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newest">
+            <div class="container">
+                <div class="row">
+                    <div class="entries col-md-10 offset-md-1 mt-6">
+                        <header>
+                            <h1>Newest Entries</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed, sodales tempor odio. Suspendisse maximus ex ut nisl pharetra, eu maximus quam molestie.</p>
+                        </header>
+        
+                        <div *ngIf="articles">
+                            <div *ngFor="let article of articles" class="entry">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
+                                            <a [routerLink]="['/article', article.id]"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
+                                        </div>
+                    
+                                        <div class="entry-txt col-md-10">
+                                            <h2><a [routerLink]="['/article', article.id]">{{ article.author }}: {{ article.title }}</a></h2>
+                                            <p>{{ article.content | articleContentExcerpt}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="contact col-md-10 offset-md-1 mt-6">
+                        <header>
+                            <h1>Contact with Author</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed.</p>
+                        </header>
+        
+                        <button type="button" class="btn">Let's Cooperate!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+</main>
 <app-footer></app-footer>
