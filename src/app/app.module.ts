@@ -12,6 +12,8 @@ import { ContactComponent } from './views/contact/contact.component';
 import { WhyComponent } from './views/why/why.component';
 import { HomeComponent } from './views/home/home.component';
 import { PageNotFoundComponent } from './views/not-found.component';
+// Google Maps
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { PageNotFoundComponent } from './views/not-found.component';
   imports: [
     SharedModule,
     ArticlesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCrGZgZv6m1m_hyeuCdoljwUqx6qwKNMTg'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
