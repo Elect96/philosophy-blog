@@ -1,7 +1,7 @@
-@import "../shared/scss/partials/_variables.scss";
-@import "../shared/bootstrap/scss/_functions.scss";
-@import "../shared/bootstrap/scss/_variables.scss";
-@import "../shared/bootstrap/scss/mixins/_breakpoints.scss";
+@import "../../shared/scss/partials/_variables.scss";
+@import "../../shared/bootstrap/scss/_functions.scss";
+@import "../../shared/bootstrap/scss/_variables.scss";
+@import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
 
 .entry {
     text-align: left;
@@ -26,18 +26,5 @@
 	}
 	@include media-breakpoint-up(sl) {
 		text-align: justify;
-	}
-}
-.side-nav {
-    & ul {
-		list-style-type: disc;
-		padding-left: 20px;
-
-		& > li {
-			margin-bottom: 5px;
-		}
-	}
-	& img {
-		margin-top: 15px;
 	}
 }

@@ -1,17 +1,17 @@
 
 <app-header></app-header>
 <div class="container">
-    <div class="row mt-6">
+    <div class="row mt-6 mb-6">
         <div class="entry col-md-8">
             <main>
                 <article>
-                    <div *ngIf="article">
+                    <div *ngIf="article$ | async as article">
                         <header>
                             <h1>{{ article.author }}: {{ article.title }}</h1>
                             <p>{{ article.date | date: 'dd/MM/yyyy, h:mm a' }}</p>
                         </header>
                         
-                        <div [innerHtml]="article.content"></div>
+                        <div [innerHtml]="article.content | articleContent"></div>
                     </div>  
 
 
@@ -43,47 +43,7 @@
             </main>
         </div>
     
-        <div class="side-nav col-md-3 offset-md-1">
-            <aside>
-                <h2>Kategorie</h2>
-                
-                <ul>
-                    <li>Alan Watts</li>
-                    <li>Anthony de Mello</li>
-                    <li>Fryderyk Nietzsche</li>
-                    <li>Platon</li>
-                    <li>Immanuel Kant</li>
-                    <li>Ralph Waldo Emerson</li>
-                </ul>
-                
-                <h2>Powiązane wpisy</h2>
-                
-                <ul>
-                    <li>Anthony de Mello: Poszukiwanie akceptacji</li>
-                    <li>Fryderyk Nietzsche: Zgładzić smoka</li>
-                    <li>Alan Watts: Potrzeba kontroli</li>
-                </ul>
-                
-                <h2>Archiwum bloga</h2>
-                
-                <ul>
-                    <li>Styczeń (8)</li>
-                    <li>Luty (6)</li>
-                    <li>Marzec (7)</li>
-                    <li>Kwiecień (9)</li>
-                    <li>Maj (9)</li>
-                    <li>Czerwiec (10)</li>
-                    <li>Lipiec (11)</li>
-                    <li>Sierpień (9)</li>
-                    <li>Wrzesień (8)</li>
-                    <li>Październik (9)</li>
-                    <li>Listopad (6)</li>
-                    <li>Grudzień (10)</li>
-                </ul>
-    
-                <img [src]="imageFileService.imageFile('add')" alt="advertisement">
-            </aside>
-        </div>
+        <app-aside></app-aside>
     </div>
 </div>
 <app-footer></app-footer>

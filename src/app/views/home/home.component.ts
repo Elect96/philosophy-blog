@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageFileService } from '../../shared/services/image-file.service';
 import { ArticleService } from '../../shared/services/article.service';
-import { Article } from '../../shared/data-model';
+import { Article, authors } from '../../shared/data-model';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,7 @@ import { Article } from '../../shared/data-model';
 })
 export class HomeComponent implements OnInit {
   articles: Article[];
+  authors = authors;
   
   constructor(private imageFileService: ImageFileService,
               private articleService: ArticleService) {  }

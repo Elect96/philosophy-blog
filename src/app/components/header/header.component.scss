@@ -14,6 +14,13 @@
 		margin-top: 50px;
 		margin-bottom: 40px;
 
+		& a {
+			color: $logo-color;
+			text-decoration: none;
+		}
+		&:hover {
+			cursor: pointer;
+		}
 		@include media-breakpoint-up(sl) {
 			font-size: $logo-md-font-size;
 		}

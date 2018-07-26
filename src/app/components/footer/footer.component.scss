@@ -7,6 +7,15 @@
 	padding-left: 0;
 	padding-right: 0;
 }
+.row {
+	margin-right: 0;
+	margin-left: 0;
+
+	@include media-breakpoint-up(sl) {
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+}
 .socials {
 	text-align: center;
 	background-color: $bg-newest;

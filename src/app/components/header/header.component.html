@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="logo justify-content-center text-center">
-        <h1>Philosophy Blog</h1>
+        <h1><a [routerLink]="['/home']">Philosophy Blog</a></h1>
       </div>
     </div>
   </div>
@@ -11,19 +11,19 @@
   <nav class="navbar">
     <ul class="menu navbar-nav justify-content-center menu">
       <li class="nav-item">
-        <a class="nav-link" href="/home">Home</a>
+        <a class="nav-link" [routerLink]="['/home']">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/first-time">First Time?</a>
+        <a class="nav-link" [routerLink]="['/first-time']">First Time?</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/why">Why Philosophy?</a>
+        <a class="nav-link" [routerLink]="['/why']">Why Philosophy?</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" [routerLink]="['/article']">Articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact</a>
+        <a class="nav-link" [routerLink]="['/contact']">Contact</a>
       </li>
     </ul>
   </nav>

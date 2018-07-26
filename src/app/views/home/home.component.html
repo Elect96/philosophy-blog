@@ -13,45 +13,10 @@
                             If yes, feel free to dive into the minds of the greatest philosophers ever!</p>
                         </header>
     
-                        <div class="author">
+                        <div *ngFor="let author of authors" class="author">
                             <figure>
-                                <a href="#"><img [src]="this.imageFileService.imageFile('alan-watts')" alt="Alan Watts"></a>
-                                <figcaption>Alan Watts</figcaption>
-                            </figure>
-                        </div>
-    
-                        <div class="author">
-                            <figure>
-                                <a href="#"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
-                                <figcaption>Anthony de Mello</figcaption>
-                            </figure>
-                        </div>
-    
-                        <div class="author">
-                            <figure>
-                                <a href="#"><img [src]="this.imageFileService.imageFile('nietzsche')" alt="Fryderyk Nietzsche"></a>
-                                <figcaption>Fryderyk Nietzsche</figcaption>
-                            </figure>
-                        </div>
-    
-                        <div class="author">
-                            <figure>
-                                <a href="#"><img [src]="this.imageFileService.imageFile('platon')" alt="Platon"></a>
-                                <figcaption>Platon</figcaption>
-                            </figure>
-                        </div>
-    
-                        <div class="author">
-                            <figure>
-                                <a href="#"><img [src]="this.imageFileService.imageFile('kant')" alt="Immanuel Kant"></a>
-                                <figcaption>Immanuel Kant</figcaption>
-                            </figure>
-                        </div>
-    
-                        <div class="author">
-                            <figure>
-                                <a href="#"><img [src]="this.imageFileService.imageFile('emerson')" alt="Ralph Waldo Emerson"></a>
-                                <figcaption>Ralph Waldo Emerson</figcaption>
+                                <a href="#"><img [src]="imageFileService.imageFile(author)" [alt]="author"></a>
+                                <figcaption>{{ author }}</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -73,7 +38,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                            <a [routerLink]="['/article', article.id]"><img [src]="this.imageFileService.imageFile('de-mello')" alt="Anthony de Mello"></a>
+                                            <a [routerLink]="['/article', article.id]"><img [src]="imageFileService.imageFile(article.author)" [alt]="article.author"></a>
                                         </div>
                     
                                         <div class="entry-txt col-md-10">
@@ -98,7 +63,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus felis, pharetra ac ultricies vel, lobortis at tellus. Phasellus lacus justo, dapibus ut turpis sed.</p>
                         </header>
         
-                        <button type="button" class="btn">Let's Cooperate!</button>
+                        <button [routerLink]="['/contact']" type="button" class="btn">Let's Cooperate!</button>
                     </div>
                 </div>
             </div>

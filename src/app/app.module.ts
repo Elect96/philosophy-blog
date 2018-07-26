@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ArticlesModule } from './articles/articles.module';
 // Routing
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 // Views
 import { FirstTimeComponent } from './views/first-time/first-time.component';
 import { AboutComponent } from './views/about/about.component';

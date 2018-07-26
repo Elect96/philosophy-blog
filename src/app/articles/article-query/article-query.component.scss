@@ -1,0 +1,30 @@
+@import "../../shared/scss/partials/_variables.scss";
+@import "../../shared/bootstrap/scss/_functions.scss";
+@import "../../shared/bootstrap/scss/_variables.scss";
+@import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
+
+.entry {
+    text-align: left;
+
+    & h1 {
+		font-size: 30px;
+		font-weight: 400;
+        color: $light-blue;
+		margin-bottom: 20px;
+		text-align: left;
+	}
+	& article {
+		background-color: $bg-entry;
+		margin-bottom: 30px;
+	}
+	.entry-img img {
+		width: 90px;
+		height: 90px;
+	}
+	.entry-txt {
+		font-size: $entry-txt-size;
+	}
+	@include media-breakpoint-up(sl) {
+		text-align: justify;
+	}
+}

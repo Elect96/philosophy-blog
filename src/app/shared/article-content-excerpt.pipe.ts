@@ -1,8 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 /*
- * Gets first paragraph of the text
- * Usage:
- *   content | articleContentExcerpt
+ * Returns first paragraph of the text
+ * Usage: content | articleContentExcerpt
 */
 @Pipe({name: 'articleContentExcerpt'})
 export class ArticleContentExcerptPipe implements PipeTransform {
