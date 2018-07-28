@@ -3,10 +3,10 @@
 @import "../../shared/bootstrap/scss/_variables.scss";
 @import "../../shared/bootstrap/scss/mixins/_breakpoints.scss";
 
-aside {
-    margin-top: -12px;
-}
 .side-nav {
+	& h2 {
+		margin: 0 0 1em 0;
+	}
     & ul {
 		list-style-type: disc;
 		padding-left: 20px;

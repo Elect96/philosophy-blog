@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { authors } from '../../shared/data-model';
 import { ImageFileService } from '../../shared/services/image-file.service';
+import { ArticleService } from '../../shared/services/article.service';
+import { Article, authors } from '../../shared/data-model';
 
 @Component({
   selector: 'app-aside',
@@ -8,10 +9,16 @@ import { ImageFileService } from '../../shared/services/image-file.service';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent implements OnInit {
+  articles: Article[];
   authors = authors;
-  constructor(private imageFileService: ImageFileService) { }
+  
+  constructor(
+    private imageFileService: ImageFileService,
+    private articleService: ArticleService
+  ) { }
 
   ngOnInit() {
+    this.articles = this.articleService.getNewArticles();
   }
 
 }
