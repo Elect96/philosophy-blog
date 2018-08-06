@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { articles } from '../articles';
 import { of } from 'rxjs';
-import { map, filter, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ArticleService {
 
-    constructor(private http: HttpClient) { }
+    constructor() { }
 
     getArticles() { return of(articles); }
     
-    getArticle(id: number | string) {
+    getArticle($id: number | string) {
         return this.getArticles().pipe(
             // (+) before `id` turns the string into a number
-            map(articles => articles.find(article => article.id === +id))
+            map(articles => articles.find(article => article.id === +$id))
         );
     }
 
@@ -32,7 +31,13 @@ export class ArticleService {
 
     getArticlesAuthor($author: string) {
         return this.getArticles().pipe(
-            map(articles => articles.filter(article => article.author == $author))
+            map(articles => articles.filter(article => article.author === $author))
+        );
+    }
+
+    getArticlesMonth($month: string | number) {
+        return this.getArticles().pipe(
+            map(articles => articles.filter(article => new Date(article.date).getMonth() === +$month))
         );
     }
 

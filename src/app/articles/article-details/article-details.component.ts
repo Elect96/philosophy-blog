@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router'; // for article/:id
+import { ActivatedRoute, ParamMap } from '@angular/router'; // for article/:id
 import { DatePipe } from '@angular/common';
 import { ImageFileService } from '../../shared/services/image-file.service';
 import { ArticleService } from '../../shared/services/article.service';

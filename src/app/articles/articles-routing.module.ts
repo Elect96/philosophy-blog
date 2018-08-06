@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
-import { ArticleQueryComponent } from './article-query/article-query.component';
+import { ArticleAuthorComponent } from './article-author/article-author.component';
+import { ArticleMonthComponent } from './article-month/article-month.component';
 
 const articlesRoutes: Routes = [
   { path: 'article', component: ArticleListComponent },
   { path: 'article/:id', component: ArticleDetailsComponent },
-  { path: 'article/q/:author', component: ArticleQueryComponent }
+  { path: 'article/author/:author', component: ArticleAuthorComponent },
+  { path: 'article/month/:month', component: ArticleMonthComponent }
 ];
 
 @NgModule({

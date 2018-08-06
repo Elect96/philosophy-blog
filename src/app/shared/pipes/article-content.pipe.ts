@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ImageFileService } from './services/image-file.service';
+import { ImageFileService } from '../services/image-file.service';
 /*
- * Returns first paragraph of the text
+ * Parses data content for display purposes
  * Usage: content | articleContent
 */
 @Pipe({name: 'articleContent'})

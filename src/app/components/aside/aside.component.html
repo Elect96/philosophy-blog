@@ -3,30 +3,21 @@
     <div class="side-nav">
         <h2>Authors</h2>
         <ul>
-            <li *ngFor="let author of authors"><a [routerLink]="['/article/q', author]">{{ author }}</a></li>
+            <li *ngFor="let author of authors"><a [routerLink]="['/article/author/', author]">{{ author }}</a></li>
         </ul>
         
         <h2>New Entries</h2>
         <ul>
-            <li *ngFor="let article of articles">
+            <li *ngFor="let article of newArticles">
                 <a [routerLink]="['/article/', article.id]">{{ article.title }}</a>
             </li>
         </ul>
         
         <h2>Archive</h2>
-        <ul>
-            <li>Styczeń (8)</li>
-            <li>Luty (6)</li>
-            <li>Marzec (7)</li>
-            <li>Kwiecień (9)</li>
-            <li>Maj (9)</li>
-            <li>Czerwiec (10)</li>
-            <li>Lipiec (11)</li>
-            <li>Sierpień (9)</li>
-            <li>Wrzesień (8)</li>
-            <li>Październik (9)</li>
-            <li>Listopad (6)</li>
-            <li>Grudzień (10)</li>
+        <ul> 
+            <li *ngFor="let articlesAmount of articlesInMonth; index as i">
+                <a [routerLink]="['/article/month/', i]">{{ i | monthDisplay }} ({{ articlesAmount }})</a>
+            </li>
         </ul>
     
         <img [src]="imageFileService.imageFile('add')" alt="advertisement">

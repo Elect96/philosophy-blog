@@ -15,7 +15,7 @@
     
                         <div *ngFor="let author of authors" class="author">
                             <figure>
-                                <a [routerLink]="['/article/q', author]"><img [src]="imageFileService.imageFile(author)" [alt]="author"></a>
+                                <a [routerLink]="['/article/author/', author]"><img [src]="imageFileService.imageFile(author)" [alt]="author"></a>
                                 <figcaption>{{ author }}</figcaption>
                             </figure>
                         </div>

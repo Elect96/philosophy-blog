@@ -5,7 +5,8 @@ import { SharedModule } from '../shared/shared.module';
 // Articles
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
-import { ArticleQueryComponent } from './article-query/article-query.component';
+import { ArticleAuthorComponent } from './article-author/article-author.component';
+import { ArticleMonthComponent } from './article-month/article-month.component';
 // Routing
 import { ArticlesRoutingModule } from './articles-routing.module';
 
@@ -13,7 +14,8 @@ import { ArticlesRoutingModule } from './articles-routing.module';
   declarations: [
     ArticleListComponent,
     ArticleDetailsComponent,
-    ArticleQueryComponent
+    ArticleAuthorComponent,
+    ArticleMonthComponent
   ],
   imports: [
     BrowserModule,
