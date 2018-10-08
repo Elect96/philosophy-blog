@@ -29,7 +29,6 @@ export class AsideComponent implements OnInit {
         map(articles => articles.map(article => article.date)),
       )
       .subscribe(date => this.articlesInMonth = this.getArticlesAllMonths(date));
-    console.log(this.articlesInMonth);
   }
 
   ngOnDestroy() { this.articles$.unsubscribe(); }

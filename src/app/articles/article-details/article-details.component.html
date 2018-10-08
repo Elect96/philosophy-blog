@@ -12,33 +12,18 @@
                         </header>
                         
                         <div [innerHtml]="article.content | articleContent"></div>
+
+                        <section>
+                            <header>
+                                <h1>Comments</h1>
+                                <p>Share What You Think!</p>
+                            </header>
+        
+                            <app-signin [articleId]="article.id"></app-signin>
+                        </section>
                     </div>  
 
 
-                    <section>
-                        <header>
-                            <h1>Komentarze czytelników</h1>
-                            <p>Przemyślenia? Reakcje? Podziel się swoją interpretacją niniejszego tekstu filozoficznego! Zachęcam do dyskusji w komentarzach poniżej, jednocześnie prosząc o zachowanie netykiety oraz kultury wypowiedzi.</p>
-                        </header>
-    
-                        <article>
-                            <header>
-                                <img [src]="imageFileService.imageFile('user')" alt="user">
-                                <p>Użytkownik 1 | 10.03.2017 | 19:39:01</p>
-                            </header>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis tellus id turpis lobortis tempor. Curabitur vulputate viverra dui. Maecenas eu lorem sed turpis bibendum laoreet non sed dolor. Pellentesque vel tellus in lacus pharetra convallis. Curabitur ut ullamcorper felis, ut feugiat massa. Donec ut euismod arcu. Vestibulum rutrum suscipit nisi, vel euismod massa tincidunt nec. Morbi rutrum sapien at augue iaculis, feugiat egestas est convallis. </p>
-                        </article>
-                        
-                        <article>
-                            <header>
-                                <img [src]="imageFileService.imageFile('user')" alt="user">
-                                <p>Użytkownik 2 | 10.03.2017 | 19:40:00</p>
-                            </header>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis tellus id turpis lobortis tempor. Curabitur vulputate viverra dui. Maecenas eu lorem sed turpis bibendum laoreet non sed dolor. Pellentesque vel tellus in lacus pharetra convallis. Curabitur ut ullamcorper felis, ut feugiat massa. Donec ut euismod arcu. Vestibulum rutrum suscipit nisi, vel euismod massa tincidunt nec. Morbi rutrum sapien at augue iaculis, feugiat egestas est convallis. </p>
-                        </article>
-                    </section>
                 </article>
             </main>
         </div>

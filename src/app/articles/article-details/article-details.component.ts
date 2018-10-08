@@ -22,7 +22,6 @@ export class ArticleDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scrollTo(0, 0);
     this.article$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.articleService.getArticle(params.get('id'))),

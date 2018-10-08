@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
               private articleService: ArticleService) {  }
 
   ngOnInit() {
-    window.scrollTo(0, 0);
     this.articles = this.articleService.getNewArticles();
   }
 

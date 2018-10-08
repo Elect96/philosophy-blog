@@ -15,7 +15,10 @@
     
                         <div *ngFor="let author of authors" class="author">
                             <figure>
-                                <a [routerLink]="['/article/author/', author]"><img [src]="imageFileService.imageFile(author)" [alt]="author"></a>
+                                <a [routerLink]="['/article/author/', author]" target="_top">
+                                    <img [src]="imageFileService.imageFile(author)" [alt]="author">
+                                </a>
+
                                 <figcaption>{{ author }}</figcaption>
                             </figure>
                         </div>
@@ -38,11 +41,16 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                            <a [routerLink]="['/article', article.id]"><img [src]="imageFileService.imageFile(article.author)" [alt]="article.author"></a>
+                                            <a [routerLink]="['/article', article.id]" target="_top">
+                                                <img [src]="imageFileService.imageFile(article.author)" [alt]="article.author">
+                                            </a>
                                         </div>
                     
                                         <div class="entry-txt col-md-10">
-                                            <h2><a [routerLink]="['/article', article.id]">{{ article.author }}: {{ article.title }}</a></h2>
+                                            <h2>
+                                                <a [routerLink]="['/article', article.id]" target="_top">{{ article.author }}: {{ article.title }}</a>
+                                            </h2>
+
                                             <p>{{ article.content | articleContentExcerpt}}</p>
                                         </div>
                                     </div>

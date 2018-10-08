@@ -14,6 +14,22 @@ import { HomeComponent } from './views/home/home.component';
 import { PageNotFoundComponent } from './views/not-found.component';
 // Google Maps
 import { AgmCoreModule } from '@agm/core';
+// Social Login
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from "angular-6-social-login";
+
+
+// Social Login Configs 
+export function getAuthServiceConfigs() {
+let config = new AuthServiceConfig(
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("902736016592345")
+      }
+    ]
+  );
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -23,17 +39,25 @@ import { AgmCoreModule } from '@agm/core';
     ContactComponent,
     WhyComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     SharedModule,
     ArticlesModule,
     AppRoutingModule,
+    // Google Maps
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCrGZgZv6m1m_hyeuCdoljwUqx6qwKNMTg'
-    })
+    }),
+    SocialLoginModule,
   ],
-  providers: [],
+  providers: [
+    // For Social Login
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

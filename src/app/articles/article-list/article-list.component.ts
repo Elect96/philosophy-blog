@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageFileService } from '../../shared/services/image-file.service';
 import { ArticleService } from '../../shared/services/article.service';
+import { PaginationService } from '../../shared/services/pagination.service';
 import { Article } from '../../shared/data-model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-article-list',
@@ -10,16 +10,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['article-list.component.scss']
 })
 export class ArticleListComponent implements OnInit {
-  articles: Observable<Article[]>;
+  articles: Article[];
 
   constructor(
     private imageFileService: ImageFileService,
-    private articleService: ArticleService
+    private paginationService: PaginationService
   ) { }
 
   ngOnInit() {
-    window.scrollTo(0, 0);
-    this.articles = this.articleService.getArticles();
+    this.paginationService.ArticleListInit();
+    this.articles = this.paginationService.articles;
   }
 
 }

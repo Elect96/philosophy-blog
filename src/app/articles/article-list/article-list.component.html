@@ -6,7 +6,7 @@
             <div *ngIf="articles" class="entry col-md-8">
                 <h1>Articles</h1>
                 
-                <article *ngFor="let article of articles | async">
+                <article *ngFor="let article of articles">
                     <div class="container">
                         <div class="row">
                             <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
@@ -20,6 +20,8 @@
                         </div>
                     </div>
                 </article>
+
+                <app-pagination [(articles)]="articles"></app-pagination>
             </div>
                 
             <div class="col-md-3 offset-md-1">

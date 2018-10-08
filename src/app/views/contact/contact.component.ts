@@ -12,8 +12,8 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    window.scrollTo(0, 0);
+  ngOnInit() { 
+    window.scroll(0, 0);
   }
-
+  
 }

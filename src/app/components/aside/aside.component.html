@@ -3,20 +3,22 @@
     <div class="side-nav">
         <h2>Authors</h2>
         <ul>
-            <li *ngFor="let author of authors"><a [routerLink]="['/article/author/', author]">{{ author }}</a></li>
+            <li *ngFor="let author of authors">
+                <a [routerLink]="['/article/author/', author]" target="_top" [queryParams]="{page: 1}">{{ author }}</a>
+            </li>
         </ul>
         
         <h2>New Entries</h2>
         <ul>
             <li *ngFor="let article of newArticles">
-                <a [routerLink]="['/article/', article.id]">{{ article.title }}</a>
+                <a [routerLink]="['/article/', article.id]" target="_top">{{ article.title }}</a>
             </li>
         </ul>
         
         <h2>Archive</h2>
         <ul> 
             <li *ngFor="let articlesAmount of articlesInMonth; index as i">
-                <a [routerLink]="['/article/month/', i]">{{ i | monthDisplay }} ({{ articlesAmount }})</a>
+                <a [routerLink]="['/article/month/', i]" target="_top">{{ i | monthDisplay }} ({{ articlesAmount }})</a>
             </li>
         </ul>
     
