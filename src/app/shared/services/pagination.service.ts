@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { ArticleService } from '../../shared/services/article.service';
 import { Article } from '../../shared/data-model';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
     providedIn: 'root',
@@ -12,7 +11,7 @@ export class PaginationService {
     rawArticles: Observable<Article[]>;
     articles: Article[];
     page: number;
-    amountOfPages: any;
+    paginatedArticles: Article[];
 
     constructor(
         private articleService: ArticleService,
@@ -26,24 +25,35 @@ export class PaginationService {
       });
       this.articles = this.Paginate(this.rawArticles, this.page);
     }
-    ArticleAuthorInit() {
+
+    ArticleAuthorInit($author) {
+      this.rawArticles = this.articleService.getArticlesAuthor($author);
       this.route.queryParams.subscribe(params => {
         this.page = params.page;
       });
+      this.articles = this.Paginate(this.rawArticles, this.page);
     }
-    ArticleMonthInit() {
-      
+    
+    ArticleMonthInit($month) {
+      this.rawArticles = this.articleService.getArticlesMonth($month);
+      this.route.queryParams.subscribe(params => {
+        this.page = params.page;
+      });
+      this.articles = this.Paginate(this.rawArticles, this.page);
     }
 
+    /* 
+     * Paginates the $articles by articlesPerCurrentPage
+     * Returns just a page of paginatedArticles
+    */
     Paginate($articles, $page) {
-      // TODO: Explain what it does
       const articlesPerCurrentPage = 7;
       let result: any[] = [0];
       let tmp = 0;
       $articles.subscribe(data => {
         for(let i = 0; i < data.length / articlesPerCurrentPage; i++) {
-          result[i] = data.slice(tmp, tmp + 7);
-          tmp += 7;
+          result[i] = data.slice(tmp, tmp + articlesPerCurrentPage);
+          tmp += articlesPerCurrentPage;
         }
       });
       // Pages can be only positive numbers
@@ -54,12 +64,35 @@ export class PaginationService {
         $page = result.length;
       }
       this.page = $page;
-      // Translation: First page = First item in $page
+      // Translation: First page = First set of items in $articles array
       $page -= 1;
-      this.amountOfPages = result;
+      // Paginated articles are now stored appropriately
+      this.paginatedArticles = result;
   
       return result[$page];
     }
+
+    /* 
+     * Updates the view based on the page 
+    */
+    pageSwap($articles, $page) {
+      // Pages can be only positive numbers
+      $page = Math.abs($page);
+      if ( ! this.isNumber($page) || $page == 0) {
+        $page = 1;
+      } else if($page > $articles.length) {
+        $page = $articles.length;
+      }
+      this.page = $page;
+      // Translation: First page = First set of items in $articles array
+      $page -= 1;
+
+      return $articles[$page];
+    }
+
+    /* 
+     * Checks if n is a number 
+    */
     isNumber(n) { 
       return !isNaN(parseFloat(n)) && !isNaN(n - 0);
     }

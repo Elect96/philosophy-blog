@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ImageFileService } from '../../shared/services/image-file.service';
-import { ArticleService } from '../../shared/services/article.service';
-import { Article } from '../../shared/data-model';
-import { Observable } from 'rxjs';
-import { switchMap, map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 import { PaginationService } from '../../shared/services/pagination.service';
+import { ImageFileService } from '../../shared/services/image-file.service';
+import { Article } from '../../shared/data-model';
 
 @Component({
   selector: 'app-article-author',
@@ -13,30 +10,19 @@ import { PaginationService } from '../../shared/services/pagination.service';
   styleUrls: ['article-author.component.scss']
 })
 export class ArticleAuthorComponent implements OnInit {
-  rawArticles: Observable<Article[]>;
   articles: Article[];
-  page: any;
+  currentComponent: string;
 
   constructor(
     private imageFileService: ImageFileService,
-    private articleService: ArticleService,
     private paginationService: PaginationService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    // Create more Articles for testing
-    this.paginationService.ArticleAuthorInit();
-    this.rawArticles = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.articleService.getArticlesAuthor(params.get("author"))),
-    );
-    this.page = this.paginationService.page;
-    this.articles = this.paginationService.Paginate(this.rawArticles, this.page);
-  }
-
-  log($test) {
-    console.log($test);
+    this.currentComponent = "author";
+    this.paginationService.ArticleAuthorInit(this.route.snapshot.url[2].path);
+    this.articles = this.paginationService.articles;
   }
 
 }

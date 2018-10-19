@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageFileService } from '../../shared/services/image-file.service';
-import { ArticleService } from '../../shared/services/article.service';
 import { PaginationService } from '../../shared/services/pagination.service';
 import { Article } from '../../shared/data-model';
 
@@ -11,6 +10,7 @@ import { Article } from '../../shared/data-model';
 })
 export class ArticleListComponent implements OnInit {
   articles: Article[];
+  currentComponent: string;
 
   constructor(
     private imageFileService: ImageFileService,
@@ -18,6 +18,7 @@ export class ArticleListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.currentComponent = "list";
     this.paginationService.ArticleListInit();
     this.articles = this.paginationService.articles;
   }

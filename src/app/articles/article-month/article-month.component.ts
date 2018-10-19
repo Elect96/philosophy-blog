@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { DatePipe } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { PaginationService } from '../../shared/services/pagination.service';
 import { ImageFileService } from '../../shared/services/image-file.service';
-import { ArticleService } from '../../shared/services/article.service';
 import { Article } from '../../shared/data-model';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-article-month',
@@ -13,18 +10,18 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['article-month.component.scss']
 })
 export class ArticleMonthComponent implements OnInit {
-  article$: Observable<Article[]>; 
+  articles: Article[];
+  currentComponent: string;
 
   constructor(
-    private route: ActivatedRoute,
     private imageFileService: ImageFileService,
-    private articleService: ArticleService
+    private paginationService: PaginationService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.article$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.articleService.getArticlesMonth(params.get("month"))),
-    );
+    this.currentComponent = "month";
+    this.paginationService.ArticleMonthInit(this.route.snapshot.url[2].path);
+    this.articles = this.paginationService.articles;
   }
 }
