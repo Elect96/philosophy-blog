@@ -1,0 +1,17 @@
+@import "../../shared/scss/partials/_variables.scss";
+
+li {
+    border: 1px solid $grey; 
+    & a {
+        background: $bg-pagination;
+        color: $default-text-color;
+        border: none;
+        text-decoration: none;
+        -webkit-transition: color .5s;
+        transition: color .5s;
+    
+        &:hover {
+            color: $dark-blue;
+        }
+    }
+}

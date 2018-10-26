@@ -10,6 +10,7 @@ import { Article } from '../../shared/data-model';
 })
 export class PaginationComponent implements OnInit {
   paginatedArticles: Article[];
+  pages: number[] = [];
   @Input() articles: Article[];
   @Input() currentComponent: string;
   @Output() articlesChange = new EventEmitter();
@@ -21,9 +22,34 @@ export class PaginationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.paginatedArticles = this.pagination.paginatedArticles;
+    this.paginatedArticles = this.pagesToDisplay(this.pagination.paginatedArticles);
   }
-// Set the max displayable amount of pages
+
+  pagesToDisplay($articles) {
+    const numberOfPagesToDisplay = 6;
+    // Counts total amount of pages available to display
+    let tmp = [];
+    for(let i = 0; i < $articles.length; i++) {
+      tmp[i] = i;
+    }
+
+    if($articles.length > numberOfPagesToDisplay) {
+      let intercept = Math.round(numberOfPagesToDisplay / 2);
+      // Pages to display starting from last to middle
+      for(let k = numberOfPagesToDisplay - 1; k >= numberOfPagesToDisplay - intercept; k--) {
+        this.pages[k] = tmp.pop(); 
+      }
+      // Pages to display starting from start to middle
+      for(let j = 0; j < intercept; j++) {
+        this.pages[j] = tmp.shift();
+      }
+    } else {
+        this.pages = tmp;
+    }
+
+    return $articles;
+  }
+
   goToPage($page: number) {
     // Detects the current view & navigates to correct path
     if(this.currentComponent == "list") {
