@@ -26,6 +26,7 @@ export class ArticleService {
             articles[length - 2],
             articles[length - 3]
         ];
+        
         return newArticles;
     }
 

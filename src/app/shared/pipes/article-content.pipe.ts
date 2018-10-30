@@ -50,6 +50,7 @@ export class ArticleContentPipe implements PipeTransform {
                 result += htmlTag.concat($content[i], "</p>");
             }
         }
+        
         return result;
     }
 }

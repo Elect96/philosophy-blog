@@ -9,11 +9,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="entry-img col-md-2 d-flex justify-content-center align-items-center">
-                                <a [routerLink]="['/article', article.id]"><img [src]="imageFileService.imageFile(article.author)" alt="Anthony de Mello"></a>
+                                <a [routerLink]="['/article', article.id]" target="_top"><img [src]="imageFileService.imageFile(article.author)" alt="Anthony de Mello"></a>
                             </div>
         
                             <div class="entry-txt col-md-10">
-                                <h2><a [routerLink]="['/article', article.id]">{{ article.author }}: {{ article.title }}</a></h2>
+                                <h2><a [routerLink]="['/article', article.id]" target="_top">{{ article.author }}: {{ article.title }}</a></h2>
                                 <p>{{ article.content | articleContentExcerpt}}</p>
                             </div>
                         </div>

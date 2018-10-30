@@ -10,6 +10,7 @@ export class ArticleContentExcerptPipe implements PipeTransform {
     for (let i = 1; i <= content.length - 1; i++) {
       tmp += content[i]
     }
+    
     return tmp.slice(0, 295) + "...";
   }
 }
