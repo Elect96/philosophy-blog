@@ -8,7 +8,7 @@ export class ImageFileService {
 
     imageFile($name) {
         let result = this.replaceAll($name);
-        return this.imagePath = "../../assets/images/" + result.toLowerCase() + ".jpg";
+        return this.imagePath = "../../assets/images/" + result.toLowerCase();
     }
 
     replaceAll($target) {

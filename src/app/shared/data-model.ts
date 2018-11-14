@@ -7,6 +7,7 @@ export class Article {
         public title: string,
         public date: number,
         public content: string[],
+        public contentImg: object,
         public user: string = "admin"
     ) { 
         this.id = Article._id++;
@@ -185,4 +186,11 @@ export const content = {
         "Nulla convallis posuere nunc vel blandit. Curabitur dictum dictum velit sit amet pulvinar. Donec mollis erat quis maximus molestie. Nunc tincidunt neque purus, nec placerat nibh sagittis ac. Duis dolor massa, commodo in lectus a, semper vehicula elit. Sed sed tellus at mi venenatis pellentesque. Suspendisse potenti. Duis commodo iaculis leo facilisis mollis."
     ],
 
+}
+export const contentImg = {
+    article_0: {
+        src: ["artykul1.jpg", "artykul2.jpg", "plato.jpg", "artykul2.jpg"],
+        alt: ["robot", "politician", "addds", "test"],
+        numberOfParagraphs: 2
+    }
 }

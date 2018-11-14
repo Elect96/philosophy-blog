@@ -10,8 +10,8 @@
                             <h1>{{ article.author }}: {{ article.title }}</h1>
                             <p>{{ article.date | date: 'dd/MM/yyyy, h:mm a' }}</p>
                         </header>
-                        
-                        <div [innerHtml]="article.content | articleContent"></div>
+
+                        <div [innerHtml]="article.content | articleContent: article.contentImg"></div>
 
                         <section>
                             <header>

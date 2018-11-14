@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ImageFileService } from '../services/image-file.service';
+
 /*
  * Parses data content for display purposes
  * Usage: content | articleContent
@@ -8,34 +9,34 @@ import { ImageFileService } from '../services/image-file.service';
 export class ArticleContentPipe implements PipeTransform {
     constructor(private imageFileService: ImageFileService) { }
 
-    transform($content: string[]): string {
-        /*
-        * Input: strings array | type: any
-        * Output: string | type: any
-        * Function parses the images into base content array
-        */
-        const numberOfParagraphs = 3;
-        const images = [
-            "<img src='" + this.imageFileService.imageFile("artykul1") + "' alt='robot' class='w-100 mb-3'>",
-            "<img src='" + this.imageFileService.imageFile("artykul2") + "' alt='politician' class='w-100 mb-3'>"
-        ];
+    /*
+    * Input: strings array | type: any
+    * Output: string | type: any
+    * Function parses the images into base content array
+    */
+    transform($content: string[], $img): string {
+        let images: any = [];
+        for(let i = 0; i < $img.src.length; i++) {
+            images[i] = `<img src="${this.imageFileService.imageFile($img.src[i])}" alt="${$img.alt[i]}" class="w-100 mb-3">`;
+        }
         
-        let tmp:any = false;
         // Detects if images are already added
         // Returns True if detected
+        let tmp:any = false;
         for (let i = 0; i < $content.length; i++) {
             if ($content[i].includes("<img")) {
                 tmp = true;
                 break;
             }
         }
+
         // If images are not detected
-        // Adds images into $content using numberOfParagraphs as a interval
+        // Adds images into $content using $img.numberOfParagraphs as a interval
         if (tmp == false) {
-            tmp = numberOfParagraphs;
+            tmp = $img.numberOfParagraphs;
             for (let i = 0; i < images.length; i++) {
                 $content.splice(tmp, 0, images[i]);
-                tmp += numberOfParagraphs + 1;
+                tmp += $img.numberOfParagraphs + 1;
             }  
         }
 
