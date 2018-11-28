@@ -1,6 +1,6 @@
 # PhilosophyBlog
 
-PhilosophyBlog was created as a blog site with facebook comments and few other functionalities.
+PhilosophyBlog was created as a responsive, mobile-first blog site with facebook comments and few other functionalities.
 
 ## References
  Webside skeleton was borrowed from youtube channel Pasja Informatyki. Many thanks to those guys for inspiration.
